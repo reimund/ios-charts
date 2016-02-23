@@ -543,7 +543,7 @@ public class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChar
         {
             CGContextSetLineWidth(context, borderLineWidth)
             CGContextSetStrokeColorWithColor(context, borderColor.CGColor)
-            CGContextStrokeRect(context, _viewPortHandler.contentRect)
+            CGContextStrokeRect(context, CGRectInset(_viewPortHandler.contentRect, -borderLineWidth / 2, -borderLineWidth / 2))
         }
         
         if (drawGridBackgroundEnabled || drawBordersEnabled)
